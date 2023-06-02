@@ -4,17 +4,14 @@ using System;
 
 public class ExampleOrder
 {
-    // Constants and static readonly fields
-    public const string ClassName = "ExampleOrder";
-    private static readonly int MaxItems = 100;
+    // Events
+    public event EventHandler ExampleEvent = null!;
 
-    // Private fields
-    private int _privateField;
-
-    // Public, protected, and internal properties
-    public int PublicProperty { get; set; }
-    protected int ProtectedProperty { get; set; }
-    internal int InternalProperty { get; set; }
+    // Finalizer (if necessary)
+    ~ExampleOrder()
+    {
+        // Perform cleanup logic here, if needed.
+    }
 
     // Constructors
     public ExampleOrder()
@@ -27,13 +24,30 @@ public class ExampleOrder
         _privateField = initialValue;
     }
 
-    // Finalizer (if necessary)
-    ~ExampleOrder()
+    // Constants and static readonly fields
+    public const string ClassName = "ExampleOrder";
+    private static readonly int MaxItems = 100;
+
+    // Private fields
+    private int _privateField;
+
+    // Public, protected, and internal properties
+    public int PublicProperty { get; set; }
+    protected int ProtectedProperty { get; set; }
+    internal int InternalProperty { get; set; }
+
+    // Private methods
+    private void PrivateMethod()
     {
-        // Perform cleanup logic here, if needed.
+        Console.WriteLine("Private method called.");
     }
 
     // Public, protected, and internal methods
+    internal void InternalMethod()
+    {
+        Console.WriteLine("Internal method called.");
+    }
+
     public void PublicMethod()
     {
         Console.WriteLine("Public method called.");
@@ -43,20 +57,6 @@ public class ExampleOrder
     {
         Console.WriteLine("Protected method called.");
     }
-
-    internal void InternalMethod()
-    {
-        Console.WriteLine("Internal method called.");
-    }
-
-    // Private methods
-    private void PrivateMethod()
-    {
-        Console.WriteLine("Private method called.");
-    }
-
-    // Events
-    public event EventHandler ExampleEvent = null!;
 
     // Indexers
     public int this[int index]
