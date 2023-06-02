@@ -16,15 +16,15 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Add dotnet-format problem matcher
-      uses: xt0rted/dotnet-format-problem-matcher@v1
+      uses: xt0rted/dotnet-format-problem-matcher@master
 
     - name: Restore dotnet tools
-      uses: xt0rted/dotnet-tool-restore@v1
+      uses: xt0rted/dotnet-tool-restore@master
 
     - name: Run dotnet format
-      uses: xt0rted/dotnet-format@v1
+      uses: xt0rted/dotnet-format@master
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        version: '3'
+        version: 'latest'
         action: 'check'
         only-changed-files: 'true'
